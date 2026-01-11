@@ -1,18 +1,26 @@
 #ifndef ROBOT_LOGIC_H
 #define ROBOT_LOGIC_H
 
-// ·Îº¿ÀÌ ÇÒ ¼ö ÀÖ´Â Çàµ¿ Á¾·ù
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// ë¡œë´‡ì´ í•  ìˆ˜ ìˆëŠ” í–‰ë™ ì¢…ë¥˜
 typedef enum {
-    ACT_FORWARD,     // ÀüÁø
-    ACT_STOP,        // Á¤Áö
-    ACT_TURN_LEFT,   // ÁÂÈ¸Àü
-    ACT_TURN_RIGHT   // ¿ìÈ¸Àü
+  ACT_FORWARD,    // ì „ì§„
+  ACT_STOP,       // ì •ì§€
+  ACT_TURN_LEFT,  // ì¢ŒíšŒì „
+  ACT_TURN_RIGHT  // ìš°íšŒì „
 } Action;
 
-// °Å¸®(cm)¸¦ ÀÔ·Â¹Ş¾Æ Çàµ¿À» °áÁ¤
+// ê±°ë¦¬(cm)ë¥¼ ì…ë ¥ë°›ì•„ í–‰ë™ì„ ê²°ì •
 Action decide_action_cm(int distance_cm);
 
-// ActionÀ» »ç¶÷ÀÌ ÀĞ±â ÁÁÀº ¹®ÀÚ¿­·Î º¯È¯
+// Actionì„ ì‚¬ëŒì´ ì½ê¸° ì¢‹ì€ ë¬¸ìì—´ë¡œ ë³€í™˜
 const char* action_to_string(Action a);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif
